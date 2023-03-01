@@ -10,7 +10,7 @@ AENET_LAMMPS_DIR=$ROOT_DIR/aenet-lammps
 LAMMPS_DIR=$ROOT_DIR/lammps
 AENET_DIR=$LAMMPS_DIR/lib/aenet/aenet
 
-if [ ${AENET_LAMMPS_VERSION} == "master" ]; then
+if [ ${AENET_LAMMPS_VERSION} = "master" ]; then
     AENET_LAMMPS_URL=https://github.com/HidekiMori-CIT/aenet-lammps/archive/refs/heads/master.zip
     if [ ! -f aenet-lammps-${AENET_LAMMPS_VERSION}.zip ]; then
         wget ${AENET_LAMMPS_URL} -O aenet-lammps-${AENET_LAMMPS_VERSION}.zip
@@ -33,7 +33,7 @@ if [ ! -f aenet-${AENET_VERSION}.tar.gz ]; then
 fi
 
 rm -rf $AENET_LAMMPS_DIR
-if [ ${AENET_LAMMPS_VERSION} == "master" ]; then
+if [ ${AENET_LAMMPS_VERSION} = "master" ]; then
     unzip aenet-lammps-${AENET_LAMMPS_VERSION}.zip
     mv aenet-lammps-master $AENET_LAMMPS_DIR
 else
