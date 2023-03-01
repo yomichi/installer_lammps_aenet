@@ -1,4 +1,4 @@
-set -e
+set -ue
 
 ROOT_DIR=$(pwd)
 

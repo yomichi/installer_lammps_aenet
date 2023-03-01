@@ -1,4 +1,4 @@
-set -e
+set -ue
 
 LAMMPS_VERSION="stable_23Jun2022"
 # AENET_LAMMPS_VERSION="2022Jul05"
@@ -51,3 +51,6 @@ tar -xzf aenet-${AENET_VERSION}.tar.gz -C $AENET_DIR --strip-components=1
 
 cp -r $AENET_LAMMPS_DIR/USER-AENET $LAMMPS_DIR/src/
 patch -u -p1 -d $AENET_DIR < $AENET_LAMMPS_DIR/aenet/aenet_lammps.patch
+
+cd $LAMMPS_DIR/src
+sed -i.orig 's/PYTHON = python/PYTHON = python3/g' Makefile
