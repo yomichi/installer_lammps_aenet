@@ -1,0 +1,13 @@
+diff --git a/src/makefiles/Makefile.gfortran_serial b/src/makefiles/Makefile.gfortran_serial
+index 54bf480..eeba118 100644
+--- a/src/makefiles/Makefile.gfortran_serial
++++ b/src/makefiles/Makefile.gfortran_serial
+@@ -30,7 +30,7 @@ SUFFIX   = gfortran_serial
+ FC       = gfortran -c
+ LD       = gfortran
+ DEBUG    =
+-FCFLAGS  = -O3 -pedantic -fexternal-blas $(DEBUG)
++FCFLAGS  = -O3 -fPIC -pedantic -fexternal-blas $(DEBUG)
+ LDFLAGS  = -static-libgfortran $(DEBUG)
+ NUMLIB   = -llapack -lblas
+ 
